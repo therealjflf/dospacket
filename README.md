@@ -12,5 +12,5 @@ There's one common specification revision floating around the interwebs, 1.09, a
 | Revision  | Date          | Original                                  | Edited                                    |
 | --------- | ------------- | ----------------------------------------- | ----------------------------------------- |
 | 1.09      | 1989/09/14    | [packet_1.09.txt](specs/packet_1.09.txt)  | [packet_1.09.md](specs/packet_1.09.md)    |
-| 1.12      | 1994/06/02    | [packet_1.11.txt](specs/packet_1.11.txt)  | [packet_1.11.md](specs/packet_1.11.md)    |
+| 1.11      | 1994/06/02    | [packet_1.11.txt](specs/packet_1.11.txt)  | [packet_1.11.md](specs/packet_1.11.md)    |
 

@@ -602,7 +602,7 @@ struct statistics {
     unsigned long errors_in;    /* Totals across all error types */
     unsigned long errors_out;
     unsigned long packets_lost; /* No buffer from receiver(), card */
-                              /* out of resources, etc. */
+                                /* out of resources, etc. */
 };
 ```
 
@@ -815,6 +815,7 @@ Note that the get_address() function is not applicable to Class 6.
 
 The AX.25 frame structure looks like this (taken from version 2.0 of the spec):
 
+```
 U and S frame:
     First Bit Sent
     Flag        Address         Control     FCS         Flag
@@ -823,6 +824,7 @@ U and S frame:
 Information frame:
     Flag        Address         Control     PID     Info.       FCS         Flag
     01111110    112/560 Bits    8 Bits      8 Bits  N*8 Bits    16 Bits     01111110
+```
 
 The Address field has a variable length because it is used to hold the source and destination callsigns, and 0 to seven callsigns of radio stations which are used to repeat the packet. The control field contains N(r) and N(s), a poll/final bit, and some other stuff not relevant to this discussion. The information field is an integral number of octets long. AX.25 doesn't specify the MTU; my driver will handle 2k. The FCS is CRC-16. The PID field specifies the layer 3 protocol in use, such as AX.25 layer 3, IP, ARP, NET/ROM, etc.
 
@@ -1217,6 +1219,8 @@ The following values have been allocated to the listed organizations:
 
 Packet driver calls indicate error by setting the carry flag on return. The error code is returned in register DH (a register not used to pass values to functions must be used to return the error code). The following error codes are defined:
 
+| Code  | Error             | Description                                                   |
+| ----- | ----------------- | ------------------------------------------------------------- |
 | 1     | BAD_HANDLE        | Invalid handle number                                         |
 | 2     | NO_CLASS          | No interfaces of specified class found                        |
 | 3     | NO_TYPE           | No interfaces of specified type found                         |
